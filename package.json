@@ -1,6 +1,6 @@
 {
   "name": "unreachable-ts",
-  "version": "0.2.0",
+  "version": "0.2.4",
   "description": "Simple function to do a compile-time check for unreachability and to throw the prescribed runtime error is it is bypassed.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,8 +15,7 @@
   },
   "keywords": [
     "unreachable",
-    "exhaustive",
-    "switch",
+    "exhaustive switch",
     "union-type"
   ],
   "author": "Cerberuser",
