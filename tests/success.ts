@@ -13,5 +13,5 @@ switch (value) {
     // do something else
     break;
   default:
-    unreachable(value, new Error("Value must be either First or Second"));
+    unreachable(value, "Value must be either First or Second");
 }

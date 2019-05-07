@@ -1,5 +1,16 @@
-export type NeverChecker<T> = [T] extends [never] ? any : never;
+export class UnreachableError extends Error {
+  constructor(message: string) {
+    super(message);
+    Object.setPrototypeOf(this, new.target.prototype);
+  }
+}
 
-export function unreachable<T>(checkedValue: T, errorValue?: NeverChecker<T>): never {
-  throw (errorValue || new TypeError(`Unexpected value: ${JSON.stringify(checkedValue)}`));
+export type NeverChecker<T> = [T] extends [never] ? string : never;
+
+export function unreachable<T>(checkedValue: T, message?: NeverChecker<T>): never {
+  throw (
+    message
+      ? new UnreachableError(message)
+      : new TypeError(`Unexpected value: ${JSON.stringify(checkedValue)}`)
+  );
 }

@@ -13,6 +13,6 @@ switch (value) {
     // do something else
     break;
   default:
-    // Error: TS2345: Argument of type 'Error' is not assignable to parameter of type 'never'.
-    unreachable(value, new Error("Value must be either First or Second"));
+    // Error: TS2345: Argument of type '"Value must be either First or Second"' is not assignable to parameter of type 'never'.
+    unreachable(value, "Value must be either First or Second");
 }
